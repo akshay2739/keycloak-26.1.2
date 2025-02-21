@@ -5,37 +5,53 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm.addEventListener("submit", function (event) {
       let isValid = true;
 
-      const username = document.getElementById("username");
-      const password = document.getElementById("password");
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
 
       const usernameError = document.getElementById("username-error");
       const passwordError = document.getElementById("password-error");
 
       const keycloakError = document.getElementById("keycloak-error");
-      keycloakError.textContent = "";
+
+      if (keycloakError) {
+        keycloakError.textContent = "";
+      }
 
       // Clear previous errors
       usernameError.textContent = "";
       passwordError.textContent = "";
 
-      username.classList.remove("error-input");
-      password.classList.remove("error-input");
+      usernameInput.classList.remove("error-input");
+      passwordInput.classList.remove("error-input");
 
-      if (username.value.trim() === "") {
+      if (usernameInput.value.trim() === "") {
         usernameError.textContent = "Username is required.";
-        username.classList.add("error-input");
+        usernameInput.classList.add("error-input");
         isValid = false;
       }
 
       if (password.value.trim() === "") {
         passwordError.textContent = "Password is required.";
-        password.classList.add("error-input");
+        passwordInput.classList.add("error-input");
         isValid = false;
       }
 
       if (!isValid) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
       }
+
+      function clearError(inputField, errorField) {
+        inputField.classList.remove("error-input");
+        errorField.textContent = "";
+      }
+
+      usernameInput.addEventListener("input", function () {
+        clearError(usernameInput, usernameError);
+      });
+
+      passwordInput.addEventListener("input", function () {
+        clearError(passwordInput, passwordError);
+      });
     });
   }
 });
