@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <title>Login to Account</title>
   <link rel="stylesheet" href="${url.resourcesPath}/css/style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/anl8qub.css">
 </head>
 <body>
   <div class="login-page-container">
@@ -13,8 +14,8 @@
       <img src="${url.resourcesPath}/img/logo.png" alt="Logo" class="logo" />
 
       <!-- Heading & subheading -->
-      <h1>Login to Account</h1>
-      <p>Enter your credentials to access your account</p>
+      <p class="login-header">Login to account</p>
+      <p class="login-sub-header">Enter your credentials to access your account</p>
 
       <!-- Login Form -->
       <form action="${url.loginAction}" method="post">
@@ -24,7 +25,7 @@
             type="text"
             id="username"
             name="username"
-            placeholder="Username"
+            placeholder="Enter username"
             required
             autofocus
           />
@@ -36,7 +37,7 @@
             type="password"
             id="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter password"
             required
           />
         </div>
