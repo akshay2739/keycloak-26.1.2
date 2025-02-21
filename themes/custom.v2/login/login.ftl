@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Login to Account</title>
-  <link rel="stylesheet" href="${url.resourcesPath}/css/style.css" />
+  <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
+  <link rel="stylesheet" href="${url.resourcesPath}/css/variables.css">
   <link rel="stylesheet" href="https://use.typekit.net/anl8qub.css">
 </head>
 <body>

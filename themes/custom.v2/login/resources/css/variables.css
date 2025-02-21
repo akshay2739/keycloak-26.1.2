@@ -1,0 +1,22 @@
+/* Define your color variables in the :root selector */
+:root {
+    /* Primary brand colors */
+    --primary-color: #0852FB;
+    --primary-hover-color: #0056b3;
+  
+    /* Background and card colors */
+    --background-color: #f5f7fc;
+    --card-bg-color: #ffffff;
+  
+    /* Text colors */
+    --text-color: #020617;
+    --text-secondary-color: #475569;
+    --text-placeholder-color: #94A3B8;
+  
+    /* Border and focus colors */
+    --border-color: #cccccc;
+    --focus-border-color: #007bff;
+
+    /* Error color */
+    --error-color: #d9534f;
+  }
