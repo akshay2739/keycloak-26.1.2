@@ -5,7 +5,7 @@
     padding: 0;
     height: 100%;
     font-family: 'proxima-nova', Arial, sans-serif;
-    background-color: var(--background-color);
+    background-color: #FBFCFE;
     color: var(--text-color);
     box-sizing: border-box;
   }
@@ -41,13 +41,14 @@
   
   /* Card Container */
   .login-card {
-    background-color: var(--card-bg-color);
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 32px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.06);
     text-align: center;
+    border: solid #E2E8F0 1px;
   }
   
   /* Logo */
