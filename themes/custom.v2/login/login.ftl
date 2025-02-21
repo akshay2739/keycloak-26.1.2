@@ -1,4 +1,3 @@
-<#-- File: KEYCLOAK_HOME/themes/custom.v2/login/login.ftl -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +26,10 @@
             id="username"
             name="username"
             placeholder="Enter username"
-            required
             autofocus
+            class="<#if message?has_content && message.summary == 'Invalid username or password'>error-input</#if>"
           />
+          <p class="error-message" id="username-error"></p>
         </div>
 
         <!-- Password -->
@@ -39,38 +39,40 @@
             id="password"
             name="password"
             placeholder="Enter password"
-            required
+            class="<#if message?has_content && message.summary == 'Invalid username or password'>error-input</#if>"
           />
+          <p class="error-message" id="password-error">
+            <#if message?has_content>
+              <div id="keycloak-error" class="error-message">${message.summary}</div>
+            </#if>
+          </p>
         </div>
 
         <div class="flex">
-            <!-- Remember Me Checkbox -->
-            <div class="form-group remember-me">
-                <input
-                    type="checkbox"
-                    id="rememberMe"
-                    name="rememberMe"
-                    <#if rememberMe?? && rememberMe?boolean>checked</#if>
-                />
-                <label for="rememberMe">Remember me</label>
-            </div>
+          <!-- Remember Me Checkbox -->
+          <div class="form-group remember-me">
+            <input
+              type="checkbox"
+              id="rememberMe"
+              name="rememberMe"
+              <#if rememberMe?? && rememberMe?boolean>checked</#if>
+            />
+            <label for="rememberMe">Remember me</label>
+          </div>
 
-            <!-- Forgot Password Link -->
-                <div class="forgot-link">
-                <a href="${url.loginResetCredentialsUrl}">Forgot?</a>
-            </div>
+          <!-- Forgot Password Link -->
+          <div class="forgot-link">
+            <a href="${url.loginResetCredentialsUrl}">Forgot?</a>
+          </div>
         </div>
-        
 
         <!-- Submit Button -->
-        <button type="submit">Login</button>
-
-        <!-- Error Message -->
-        <#if message?has_content>
-          <div class="error">${message}</div>
-        </#if>
+        <button type="submit">Login</button>       
       </form>
     </div>
   </div>
+
+  <!-- Include the external JavaScript file -->
+  <script src="${url.resourcesPath}/js/login.js"></script>
 </body>
 </html>

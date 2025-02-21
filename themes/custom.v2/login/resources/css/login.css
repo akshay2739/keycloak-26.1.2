@@ -1,4 +1,5 @@
-  /* Global styles using the variables */
+@import url('variables.css');
+
   html, body {
     margin: 0;
     padding: 0;
@@ -13,6 +14,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .error-message{
+    color: var(--error-color);
+    text-align: left;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .error-input{
+    outline: none;
+    border: solid var(--error-color) 1px !important;
+    box-shadow: 0px 0px 4px 0px var(--error-color);
   }
   
   /* Centering the login container */
@@ -126,12 +142,5 @@
   
   button:hover {
     background-color: var(--primary-hover-color);
-  }
-  
-  /* Error Message */
-  .error {
-    margin-top: 15px;
-    color: var(--error-color);
-    font-size: 14px;
   }
   
