@@ -18,7 +18,7 @@
             <p class="card-header">Reset Password</p>
             <p class="card-sub-header">Enter your new password</p>
 
-            <form action="${url.loginAction}" method="post">
+            <form id="password-form" action="${url.loginAction}" method="post">
                 <!-- New Password -->
                 <div class="form-group">
                     <input type="password" id="password" name="password" placeholder="New Password" required />
@@ -54,13 +54,19 @@
                     <p class="error-message" id="confirm-password-error"></p>
                 </div>
 
-                <button type="submit" id="reset-button" class="primary-button">Reset Password</button>
+                <button type="submit" id="reset-button" class="primary-button">Reset & Login</button>
+
+                 <div class="back-to-login">
+                    <a href="${url.loginUrl}">
+                        <img src="${url.resourcesPath}/img/arrow-left.png" alt="left-arrow" />
+                        Back to Login
+                    </a>
+                </div>
             </form>
         </div>
 
         <!-- Success Message (Hidden by Default) -->
         <div class="success-message" id="success-message" style="display: none;">
-            <img src="${url.resourcesPath}/img/success.png" alt="Success" class="success-icon" />
             <p class="header">Password Reset Successfully</p>
             <p class="sub-header">You can now log in with your new password</p>
             <a href="${url.loginUrl}" class="primary-button">Back to Login</a>
