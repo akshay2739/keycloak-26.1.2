@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="${url.resourcesPath}/css/common.css">
-    <link rel="stylesheet" href="${url.resourcesPath}/css/forgot-password.css">
+    <link rel="stylesheet" href="${url.resourcesPath}/css/reset-password.css">
     <link rel="stylesheet" href="${url.resourcesPath}/css/variables.css">
     <link rel="stylesheet" href="https://use.typekit.net/anl8qub.css">
 </head>
