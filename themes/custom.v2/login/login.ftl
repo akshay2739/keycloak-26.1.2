@@ -6,17 +6,19 @@
   <link rel="stylesheet" href="${url.resourcesPath}/css/common.css">
   <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
   <link rel="stylesheet" href="${url.resourcesPath}/css/variables.css">
+  <link rel="stylesheet" href="${url.resourcesPath}/css/form.css">
+
   <link rel="stylesheet" href="https://use.typekit.net/anl8qub.css">
 </head>
 <body>
   <div class="login-page-container">
-    <div class="login-card">
+    <div class="card">
       <!-- Logo -->
       <img src="${url.resourcesPath}/img/logo.png" alt="Logo" class="logo" />
 
       <!-- Heading & subheading -->
-      <p class="login-header">Login to account</p>
-      <p class="login-sub-header">Enter your credentials to access your account</p>
+      <p class="card-header">Login to account</p>
+      <p class="card-sub-header">Enter your credentials to access your account</p>
 
       <!-- Login Form -->
       <form action="${url.loginAction}" method="post">

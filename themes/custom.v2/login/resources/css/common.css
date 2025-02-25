@@ -1,82 +1,67 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'proxima-nova', Arial, sans-serif;
-    background-color: #FBFCFE;
-    color: var(--text-color);
-    box-sizing: border-box;
-  }
- 
- .logo {
-    max-width: 180px;
-    margin: 0 auto 1rem;
-    display: block;
-  }
-
-  .form-group {
-    margin-bottom: 16px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="password"] {
-    box-sizing: border-box;
-    height: 40px;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 400;
-    padding-left: 8px;
-  }
-  
-  
-  .form-group input[type="text"]:focus,
-  .form-group input[type="password"]:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0px 0px 0px 4px rgba(10, 167, 255, 0.25);
-  }
-
-.primary-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "proxima-nova", Arial, sans-serif;
+  background-color: #fbfcfe;
+  color: var(--text-color);
+  box-sizing: border-box;
 }
 
-.secondary-button{
+.logo {
+  max-width: 180px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondary-button {
   width: 100%;
   padding: 12px;
   font-size: 16px;
   background-color: var(--card-bg-color);
-  color: #0F172A;
-  border: solid #E2E8F0 1px;
+  color: #0f172a;
+  border: solid #e2e8f0 1px;
   border-radius: 6px;
   cursor: pointer;
 }
-    
+
 .primary-button:hover {
-    background-color: var(--primary-hover-color);
+  background-color: var(--primary-hover-color);
 }
 
-
-.error-message{
-  color: var(--error-color);
-  text-align: left;
-  margin: 0;
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 4px;
+/* Card Container */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.06);
+  text-align: center;
+  border: solid #e2e8f0 1px;
 }
 
-.error-input{
-  outline: none;
-  border: solid var(--error-color) 1px !important;
-  box-shadow: 0px 0px 4px 0px var(--error-color);
+.card-header {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.card-sub-header p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--text-secondary-color);
 }

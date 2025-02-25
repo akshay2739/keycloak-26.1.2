@@ -1,0 +1,64 @@
+@import url("variables.css");
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 8px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0px 0px 0px 4px rgba(10, 167, 255, 0.25);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 8px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0px 0px 0px 4px rgba(10, 167, 255, 0.25);
+}
+
+.error-message {
+  color: var(--error-color);
+  text-align: left;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.error-input {
+  outline: none;
+  border: solid var(--error-color) 1px !important;
+  box-shadow: 0px 0px 4px 0px var(--error-color);
+}

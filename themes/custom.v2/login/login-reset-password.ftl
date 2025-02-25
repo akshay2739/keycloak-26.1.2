@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="${url.resourcesPath}/css/reset-password.css">
     <link rel="stylesheet" href="${url.resourcesPath}/css/variables.css">
     <link rel="stylesheet" href="https://use.typekit.net/anl8qub.css">
+    <link rel="stylesheet" href="${url.resourcesPath}/css/form.css">
+
 </head>
 
 <body>
     <div class="container">
-        <div class="forgot-password-card">
+        <div class="card">
             <img src="${url.resourcesPath}/img/logo.png" alt="Logo" class="logo" />
 
             <!-- FORM SECTION -->
             <div id="reset-password-form">
-                <p class="header">Forgot Your Password?</p>
-                <p class="sub-header">No worries, we’ll send you reset instructions.</p>
+                <p class="card-header">Forgot Your Password?</p>
+                <p class="card-sub-header">No worries, we’ll send you reset instructions.</p>
 
                 <form action="${url.loginAction}" method="post">
                     <div class="form-group">

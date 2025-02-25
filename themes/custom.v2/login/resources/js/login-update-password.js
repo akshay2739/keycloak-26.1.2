@@ -1,77 +1,82 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const resetPasswordForm = document.querySelector("form");
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirm-password");
-  const passwordError = document.getElementById("password-error");
-  const confirmPasswordError = document.getElementById(
-    "confirm-password-error"
+  const resetButton = document.getElementById("reset-button");
+
+  // Validation criteria elements
+  const lengthCriteria = document.getElementById("length-criteria");
+  const caseCriteria = document.getElementById("case-criteria");
+  const numberSymbolCriteria = document.getElementById(
+    "number-symbol-criteria"
   );
-  const formContainer = document.getElementById("reset-password-form");
-  const successMessage = document.getElementById("success-message");
+  const usernameCriteria = document.getElementById("username-criteria");
 
-  function clearError(inputField, errorField) {
-    inputField.classList.remove("error-input");
-    errorField.textContent = "";
+  const username = "your-username"; // Replace this with the actual username
+
+  function validatePassword() {
+    const password = passwordInput.value;
+    let isValid = true;
+
+    // Check if password is at least 15 characters
+    if (password.length >= 15) {
+      lengthCriteria.classList.add("valid");
+      lengthCriteria.classList.remove("invalid");
+    } else {
+      lengthCriteria.classList.add("invalid");
+      lengthCriteria.classList.remove("valid");
+      isValid = false;
+    }
+
+    // Check if password contains both lowercase and uppercase letters
+    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) {
+      caseCriteria.classList.add("valid");
+      caseCriteria.classList.remove("invalid");
+    } else {
+      caseCriteria.classList.add("invalid");
+      caseCriteria.classList.remove("valid");
+      isValid = false;
+    }
+
+    // Check if password contains at least one number and one symbol
+    if (/\d/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      numberSymbolCriteria.classList.add("valid");
+      numberSymbolCriteria.classList.remove("invalid");
+    } else {
+      numberSymbolCriteria.classList.add("invalid");
+      numberSymbolCriteria.classList.remove("valid");
+      isValid = false;
+    }
+
+    // Check if password contains the username
+    if (!password.includes(username)) {
+      usernameCriteria.classList.add("valid");
+      usernameCriteria.classList.remove("invalid");
+    } else {
+      usernameCriteria.classList.add("invalid");
+      usernameCriteria.classList.remove("valid");
+      isValid = false;
+    }
+
+    return isValid;
   }
 
-  if (resetPasswordForm) {
-    resetPasswordForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission
-      let isValid = true;
+  function validateConfirmPassword() {
+    return passwordInput.value === confirmPasswordInput.value;
+  }
 
-      // Clear previous errors
-      passwordError.textContent = "";
-      confirmPasswordError.textContent = "";
-      passwordInput.classList.remove("error-input");
+  // Attach event listeners
+  passwordInput.addEventListener("input", validatePassword);
+  confirmPasswordInput.addEventListener("input", function () {
+    if (validateConfirmPassword()) {
       confirmPasswordInput.classList.remove("error-input");
+    } else {
+      confirmPasswordInput.classList.add("error-input");
+    }
+  });
 
-      // Password validation rules
-      if (passwordInput.value.length < 8) {
-        passwordError.textContent =
-          "Password must be at least 8 characters long.";
-        passwordInput.classList.add("error-input");
-        isValid = false;
-      }
-
-      if (passwordInput.value !== confirmPasswordInput.value) {
-        confirmPasswordError.textContent = "Passwords do not match.";
-        confirmPasswordInput.classList.add("error-input");
-        isValid = false;
-      }
-
-      if (!isValid) return;
-
-      // Submit the form via fetch
-      fetch(resetPasswordForm.action, {
-        method: "POST",
-        body: new URLSearchParams(new FormData(resetPasswordForm)),
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Hide form and show success message
-            formContainer.style.display = "none";
-            successMessage.style.display = "block";
-          } else {
-            return response.text().then((text) => {
-              throw new Error(text);
-            });
-          }
-        })
-        .catch((error) => {
-          passwordError.textContent = "An error occurred. Please try again.";
-          passwordInput.classList.add("error-input");
-          console.error("Error:", error);
-        });
-    });
-
-    // Remove error message when typing
-    passwordInput.addEventListener("input", function () {
-      clearError(passwordInput, passwordError);
-    });
-
-    confirmPasswordInput.addEventListener("input", function () {
-      clearError(confirmPasswordInput, confirmPasswordError);
-    });
-  }
+  resetButton.addEventListener("click", function (event) {
+    if (!validatePassword() || !validateConfirmPassword()) {
+      event.preventDefault();
+    }
+  });
 });

@@ -1,101 +1,48 @@
-@import url('variables.css');
-  
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Centering the login container */
-  .login-page-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  
-  /* Card Container */
-  .login-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 32px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.06);
-    text-align: center;
-    border: solid #E2E8F0 1px;
-  }
-  
-  .login-header {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-color);
-  }
-  
-  .login-sub-header p {
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: var(--text-secondary-color);
-  }
-  
-  /* Form Groups */
-  .form-group {
-    margin-bottom: 16px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="password"] {
-    box-sizing: border-box;
-    height: 40px;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 400;
-    padding-left: 8px;
-  }
-  
-  
-  .form-group input[type="text"]:focus,
-  .form-group input[type="password"]:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0px 0px 0px 4px rgba(10, 167, 255, 0.25);
-  }
-  
-  /* Remember Me */
-  .remember-me {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-  .remember-me input[type="checkbox"] {
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-  }
-  .remember-me label {
-    cursor: pointer;
-    color: var(--text-color);
-  }
-  
-  /* Forgot Password Link */
-  .forgot-link {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  .forgot-link a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .forgot-link a:hover {
-    text-decoration: underline;
-  }
-  
+@import url("variables.css");
 
-  
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Centering the login container */
+.login-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Remember Me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.remember-me label {
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Forgot Password Link */
+.forgot-link {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.forgot-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
