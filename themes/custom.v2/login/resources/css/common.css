@@ -49,6 +49,17 @@ html, body {
     border-radius: 6px;
     cursor: pointer;
 }
+
+.secondary-button{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--card-bg-color);
+  color: #0F172A;
+  border: solid #E2E8F0 1px;
+  border-radius: 6px;
+  cursor: pointer;
+}
     
 .primary-button:hover {
     background-color: var(--primary-hover-color);
